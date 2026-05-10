@@ -1,8 +1,7 @@
-import React, { createContext, useState } from "react";
+import { useState } from "react";
+import { UserContext } from "./UserCtx";
 
-export const UserContext = createContext();
-
-export const UserProvider = ({ children }) => {
+export default function UserProvider({ children }) {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
 
@@ -21,4 +20,4 @@ export const UserProvider = ({ children }) => {
       {children}
     </UserContext.Provider>
   );
-};
+}

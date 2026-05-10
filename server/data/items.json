@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "titulo": "Projeto A",
+    "descricao": "Descrição do projeto A",
+    "status": "Em Progresso",
+    "data": "2026-04-14"
+  },
+  {
+    "id": 2,
+    "titulo": "Projeto B",
+    "descricao": "Descrição do projeto B",
+    "status": "Concluído",
+    "data": "2026-04-10"
+  },
+  {
+    "id": 3,
+    "titulo": "Projeto C",
+    "descricao": "Descrição do projeto C",
+    "status": "Pendente",
+    "data": "2026-04-20"
+  }
+]

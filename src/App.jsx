@@ -2,7 +2,7 @@ import "./index.css";
 import LoginPage from "./Login/LoginPage";
 import Dashboard from "./Dashboard/Dashboard";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { UserProvider } from "./context/UserContext";
+import UserProvider from "./context/UserContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {

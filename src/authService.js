@@ -1,21 +1,14 @@
+const API = "/api";
+
 export const loginMock = async (email, password) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // Credenciais de teste do administrador
-      if (email === "admin@gmail.com" && password === "admin123") {
-        resolve({
-          token: "fake-jwt-token-123456789",
-          user: {
-            id: 1,
-            name: "Administrador",
-            email: "admin@gmail.com",
-          },
-        });
-      } else {
-        reject(
-          new Error("E-mail ou senha incorretos. Verifique suas credenciais."),
-        );
-      }
-    }, 1500);
+  const res = await fetch(`${API}/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
   });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.error || "E-mail ou senha incorretos");
+  }
+  return res.json();
 };
