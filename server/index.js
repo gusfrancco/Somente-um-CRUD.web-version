@@ -74,7 +74,13 @@ app.post("/api/login", (req, res) => {
 
   const users = readJSON(USERS_FILE);
   const user = users.find((u) => u.email === email);
-  if (!user || !bcrypt.compareSync(password, user.password)) {
+  if (!user) {
+    return res.status(401).json({ error: "E-mail ou senha incorretos" });
+  }
+  const passwordOk = user.password.startsWith("$2")
+    ? bcrypt.compareSync(password, user.password)
+    : password === user.password;
+  if (!passwordOk) {
     return res.status(401).json({ error: "E-mail ou senha incorretos" });
   }
 
