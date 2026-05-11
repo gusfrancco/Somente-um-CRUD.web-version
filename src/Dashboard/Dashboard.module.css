@@ -97,11 +97,12 @@ body {
 
 .input {
   flex: 1;
-  padding: 0.65rem 0.75rem;
+  padding: 0.65rem 1.25rem;
   border: 1px solid var(--border);
   border-radius: 4px;
   font-size: 0.95rem;
   font-family: inherit;
+  height: 40px;
 }
 
 .input:focus {
